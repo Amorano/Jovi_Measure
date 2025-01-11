@@ -11,7 +11,7 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Amorano/Jovi_Measure"
+Repository = "https://github.com/Amorano/jovi_measure"
 
 [tool.comfy]
 PublisherId = "amorano"
