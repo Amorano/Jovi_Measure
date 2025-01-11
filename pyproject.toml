@@ -1,0 +1,19 @@
+[project]
+name = "Jovi_Measure"
+description = "ComfyUI Nodes for using Spout streams "
+version = "1.0.0"
+license = { file = "LICENSE" }
+dependencies = [
+    "loguru",
+    "numpy>=1.26.4,<2.0.0; python_version < '3.12'",
+    "numpy>=2.0.0; python_version > '3.11'",
+    "scikit-image",
+]
+
+[project.urls]
+Repository = "https://github.com/Amorano/Jovi_Measure"
+
+[tool.comfy]
+PublisherId = "amorano"
+DisplayName = "Jovi_Measure"
+Icon = ""
