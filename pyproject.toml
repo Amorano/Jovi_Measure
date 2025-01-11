@@ -15,5 +15,5 @@ Repository = "https://github.com/Amorano/Jovi_Measure"
 
 [tool.comfy]
 PublisherId = "amorano"
-DisplayName = "Jovi_Measure"
+DisplayName = "jovi_measure"
 Icon = ""
