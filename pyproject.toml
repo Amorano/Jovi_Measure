@@ -1,5 +1,5 @@
 [project]
-name = "Jovi_Measure"
+name = "jovi_measure"
 description = "ComfyUI Nodes for using Spout streams "
 version = "1.0.0"
 license = { file = "LICENSE" }
@@ -11,9 +11,9 @@ dependencies = [
 ]
 
 [project.urls]
-Repository = "https://github.com/Amorano/jovi_measure"
+Repository = "https://github.com/Amorano/Jovi_Measure"
 
 [tool.comfy]
 PublisherId = "amorano"
-DisplayName = "jovi_measure"
+DisplayName = "Jovi_Measure"
 Icon = ""
