@@ -28,6 +28,9 @@
 
 ## UPDATES
 
+**2024/01/31** @1.0.1:
+* code cleanup
+
 **2024/01/07** @1.0.0:
 * initial release
 

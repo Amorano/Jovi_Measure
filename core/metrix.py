@@ -3,36 +3,15 @@ Jovi_Measure - http://www.github.com/amorano/Jovi_Measure
 Image Metrics
 """
 
-import torch
-import numpy as np
 import skimage.measure as skm
 
 from comfy.utils import ProgressBar
 
 from .. import JOVBaseNode
-
-from . import deep_merge
-
-# ==============================================================================
-# === SUPPORT ===
-# ==============================================================================
-
-def tensor2cv(tensor: torch.Tensor, invert_mask:bool=True) -> np.ndarray:
-    """Convert a torch Tensor to a numpy ndarray."""
-    if tensor.ndim > 3:
-        raise Exception("Tensor is batch of tensors")
-
-    if tensor.ndim < 3:
-        tensor = tensor.unsqueeze(-1)
-
-    if tensor.shape[2] == 1 and invert_mask:
-        tensor = 1. - tensor
-
-    tensor = tensor.cpu().numpy()
-    return np.clip(255.0 * tensor, 0, 255).astype(np.uint8)
+from . import deep_merge, tensor2cv
 
 # ==============================================================================
-# === COMFYUI NODE ===
+# === CLASS ===
 # ==============================================================================
 
 class ShannonEntropyNode(JOVBaseNode):
