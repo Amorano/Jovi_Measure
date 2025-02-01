@@ -1,7 +1,7 @@
 [project]
 name = "jovi_measure"
-description = "ComfyUI Nodes for using Spout streams "
-version = "1.0.2"
+description = "Image metrics nodes for ComfyUI "
+version = "1.0.3"
 license = { file = "LICENSE" }
 readme = "README.md"
 authors = [{ name = "Alexander G. Morano", email = "amorano@gmail.com" }]
