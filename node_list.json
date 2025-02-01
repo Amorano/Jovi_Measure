@@ -1,4 +1,4 @@
 {
-    "BLUR EFFECT (JOV_MEASURE)": "Calculate the Shannon entropy of an image",
+    "BLUR EFFECT (JOV_MEASURE)": "Calculate the blurriness of the input image",
     "SHANNON ENTROPY (JOV_MEASURE)": "Calculate the Shannon entropy of an image"
 }

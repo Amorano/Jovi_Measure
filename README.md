@@ -28,6 +28,10 @@
 
 ## UPDATES
 
+**2024/02/01** @1.0.2:
+* fixed all tooltips
+* registry pyproject and code cleanup
+
 **2024/01/31** @1.0.1:
 * code cleanup
 

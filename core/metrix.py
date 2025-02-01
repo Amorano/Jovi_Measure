@@ -18,6 +18,9 @@ class ShannonEntropyNode(JOVBaseNode):
     NAME = "SHANNON ENTROPY"
     RETURN_TYPES = ("FLOAT",)
     RETURN_NAMES = ("FLOAT",)
+    OUTPUT_TOOLTIPS = (
+        "The Shannon entropy value of the image.",
+    )
     SORT = 50
     DESCRIPTION = """
 Calculate the Shannon entropy of an image.
@@ -28,7 +31,7 @@ Calculate the Shannon entropy of an image.
         d = super().INPUT_TYPES()
         d = deep_merge(d, {
             "required": {
-                'image': ("IMAGE", {"default": None}),
+                'image': ("IMAGE", {"default": None, "tooltip": "RGBA, RGB or Grayscale image"}),
             }
         })
         return d
@@ -41,7 +44,6 @@ Calculate the Shannon entropy of an image.
             image = tensor2cv(image)
             val = skm.shannon_entropy(image)
             vals.append(val)
-            print(val)
             pbar.update_absolute(idx)
         return vals,
 
@@ -49,9 +51,12 @@ class BlurEffectNode(JOVBaseNode):
     NAME = "BLUR EFFECT"
     RETURN_TYPES = ("FLOAT",)
     RETURN_NAMES = ("FLOAT",)
+    OUTPUT_TOOLTIPS = (
+        "The amount of blurriness (0->1.0) of the input image.",
+    )
     SORT = 50
     DESCRIPTION = """
-Calculate the Shannon entropy of an image.
+Calculate the blurriness of the input image.
 """
 
     @classmethod
@@ -59,7 +64,7 @@ Calculate the Shannon entropy of an image.
         d = super().INPUT_TYPES()
         d = deep_merge(d, {
             "required": {
-                'image': ("IMAGE", {"default": None}),
+                'image': ("IMAGE", {"default": None, "tooltip": "RGBA, RGB or Grayscale image"}),
             },
             "optional": {
                 'h_size': ("INT", {"default": 11, "tooltip": "Size of the re-blurring filter."}),
@@ -79,6 +84,5 @@ Calculate the Shannon entropy of an image.
                 channel_axis = None
             val = skm.blur_effect(image, h_size=h_size, channel_axis=channel_axis)
             vals.append(val)
-            print(val)
             pbar.update_absolute(idx)
         return vals,
