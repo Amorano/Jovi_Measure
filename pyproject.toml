@@ -1,7 +1,7 @@
 [project]
 name = "jovi_measure"
-description = "Image metrics nodes for ComfyUI "
-version = "1.0.3"
+description = "Image metrics nodes for ComfyUI"
+version = "1.0.4"
 license = { file = "LICENSE" }
 readme = "README.md"
 authors = [{ name = "Alexander G. Morano", email = "amorano@gmail.com" }]
@@ -31,4 +31,4 @@ Issues = "https://github.com/Amorano/Jovi_Measure/issues"
 [tool.comfy]
 PublisherId = "amorano"
 DisplayName = "Jovi_Measure"
-Icon = "https://avatars.githubusercontent.com/u/225178?s=48&v=4"
+Icon = "https://avatars.githubusercontent.com/u/225178?v=4"
