@@ -28,7 +28,7 @@
 
 ## UPDATES
 
-**2024/02/01** @1.0.5:
+**2024/02/01** @1.0.6:
 * fixed all tooltips
 * registry pyproject and code cleanup
 
