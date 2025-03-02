@@ -28,14 +28,17 @@
 
 ## UPDATES
 
-**2024/02/01** @1.0.6:
+**2025/03/01** @1.0.6:
+* fixed all the year dates in readme since I have been writing 2024! =D
+
+**2025/02/01** @1.0.6:
 * fixed all tooltips
 * registry pyproject and code cleanup
 
-**2024/01/31** @1.0.1:
+**2025/01/31** @1.0.1:
 * code cleanup
 
-**2024/01/07** @1.0.0:
+**2025/01/07** @1.0.0:
 * initial release
 
 # INSTALLATION
