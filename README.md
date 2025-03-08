@@ -28,6 +28,9 @@
 
 ## UPDATES
 
+**2025/03/08** @1.0.7:
+* removed security scanner failures for in-line http links
+
 **2025/03/01** @1.0.6:
 * fixed all the year dates in readme since I have been writing 2024! =D
 

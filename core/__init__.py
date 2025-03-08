@@ -1,6 +1,5 @@
 """
-Jovi_Measure - http://www.github.com/Amorano/Jovi_Measure
-Core
+Jovi_Measure - Core
 """
 
 import torch

@@ -1,6 +1,5 @@
 """
-Jovi_Measure - http://www.github.com/amorano/Jovi_Measure
-Image Metrics
+Jovi_Measure - Image Metrics
 """
 
 import skimage.measure as skm
