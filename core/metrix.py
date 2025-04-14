@@ -1,19 +1,23 @@
-"""
-Jovi_Measure - Image Metrics
-"""
+""" Jovi_Measure - Image Metrics """
 
 import skimage.measure as skm
 
 from comfy.utils import ProgressBar
 
-from .. import JOVBaseNode
-from . import deep_merge, tensor2cv
+from cozy_comfyui import \
+    deep_merge
+
+from cozy_comfyui.node import \
+    CozyBaseNode
+
+from cozy_comfyui.image.convert import \
+    tensor_to_cv
 
 # ==============================================================================
 # === CLASS ===
 # ==============================================================================
 
-class ShannonEntropyNode(JOVBaseNode):
+class ShannonEntropyNode(CozyBaseNode):
     NAME = "SHANNON ENTROPY"
     RETURN_TYPES = ("FLOAT",)
     RETURN_NAMES = ("FLOAT",)
@@ -40,13 +44,13 @@ Calculate the Shannon entropy of an image.
         images = [i for i in image]
         pbar = ProgressBar(len(images))
         for idx, image in enumerate(images):
-            image = tensor2cv(image)
+            image = tensor_to_cv(image)
             val = skm.shannon_entropy(image)
             vals.append(val)
             pbar.update_absolute(idx)
         return vals,
 
-class BlurEffectNode(JOVBaseNode):
+class BlurEffectNode(CozyBaseNode):
     NAME = "BLUR EFFECT"
     RETURN_TYPES = ("FLOAT",)
     RETURN_NAMES = ("FLOAT",)
@@ -77,7 +81,7 @@ Calculate the blurriness of the input image.
         images = [i for i in image]
         pbar = ProgressBar(len(images))
         for idx, image in enumerate(images):
-            image = tensor2cv(image)
+            image = tensor_to_cv(image)
             channel_axis = 2
             if len(hwc := image.shape) == 2 or hwc[2] == 1:
                 channel_axis = None
