@@ -6,7 +6,7 @@ from comfy.utils import ProgressBar
 
 from cozy_comfyui import \
     EnumConvertType, \
-    deep_merge, parse_param
+    deep_merge, parse_param, zip_longest_fill
 
 from cozy_comfyui.lexicon import \
     Lexicon
@@ -45,8 +45,8 @@ Calculate the Shannon entropy of an image.
         })
         return Lexicon._parse(d)
 
-    def run(self, image, **kw) -> float:
-        image = parse_param(kw, "image", EnumConvertType.IMAGE, None)
+    def run(self, **kw) -> float:
+        image = parse_param(kw, Lexicon.IMAGE, EnumConvertType.IMAGE, None)
         vals = []
         pbar = ProgressBar(len(image))
         for idx, image in enumerate(image):
@@ -86,16 +86,19 @@ Calculate the blurriness of the input image.
         })
         return Lexicon._parse(d)
 
-    def run(self, image, h_size, **kw) -> float:
+    def run(self, **kw) -> float:
         image = parse_param(kw, Lexicon.IMAGE, EnumConvertType.IMAGE, None)
+        blur = parse_param(kw, Lexicon.BLUR, EnumConvertType.INT, None)
+
         vals = []
-        pbar = ProgressBar(len(image))
-        for idx, image in enumerate(image):
+        params = list(zip_longest_fill(image, blur))
+        pbar = ProgressBar(len(params))
+        for idx, (image, blur) in enumerate(params):
             image = tensor_to_cv(image)
             channel_axis = 2
             if len(hwc := image.shape) == 2 or hwc[2] == 1:
                 channel_axis = None
-            val = skm.blur_effect(image, h_size=h_size, channel_axis=channel_axis)
+            val = skm.blur_effect(image, h_size=blur, channel_axis=channel_axis)
             vals.append(val)
             pbar.update_absolute(idx)
         return (vals,)
