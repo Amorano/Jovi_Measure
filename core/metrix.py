@@ -80,7 +80,7 @@ Calculate the blurriness of the input image.
             "optional": {
                 Lexicon.BLUR: ("INT", {
                     "default": 11,
-                    "tooltip": "Size of the re-blurring filter."}),
+                    "tooltip": "Size of the re-blurring filter"}),
                 # 'channel_axis': ("INT", {"default": 0, "min": 0, "max": 3}),
             }
         })
